@@ -10,7 +10,7 @@ class Solution {
             }
         }
         
-        StringBuffer result = new StringBuffer();
+        StringBuilder result = new StringBuilder();
         // while (!stack.isEmpty()) {
         //     result.insert(0, stack.pop());
         // }
