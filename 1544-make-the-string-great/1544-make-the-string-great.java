@@ -1,7 +1,7 @@
 class Solution {
     public String makeGood(String s) {
         Stack<Character> stack = new Stack<>();
-        
+
         for (char c : s.toCharArray()) {
             if (!stack.isEmpty() && Math.abs(c - stack.peek()) == 32) {
                 stack.pop();
@@ -9,18 +9,13 @@ class Solution {
                 stack.push(c);
             }
         }
-        
-        StringBuilder result = new StringBuilder();
-        // while (!stack.isEmpty()) {
-        //     result.insert(0, stack.pop());
-        // }
-        
-        // return result.toString();
 
+        StringBuilder result = new StringBuilder();
         while (!stack.isEmpty()) {
             result.append(stack.pop());
         }
-        // Vì stack là LIFO nên chuỗi bị đảo ngược,
+
+        //Vì stack là LIFO nên chuỗi bị đảo ngược, 
         //ta gọi reverse() để đảo lại đúng thứ tự
         result.reverse();
         return result.toString();
